@@ -547,7 +547,7 @@ codealike.json
     "test": "jest",
     "test:watch": "jest --watch",
     "test:update-snapshots": "cross-env UPDATE_EXPECTED=true npx jest",
-    "demo": "npm run build && npx @felce/lowcode-code-generator --solution . --output generated demo-schema.json"
+    "demo": "npm run build && npx @felce/lowcode-react-code-generator --solution . --output generated demo-schema.json"
   },
   "repository": {
     "type": "git",
@@ -559,7 +559,7 @@ codealike.json
     "registry": "https://registry.npm.xxx.com"
   },
   "dependencies": {
-    "@felce/lowcode-code-generator": "^1.0.0",
+    "@felce/lowcode-react-code-generator": "^1.0.0",
     "@felce/lowcode-types": "^1.0.0",
     "tslib": "^2.3.0"
   },
@@ -626,7 +626,7 @@ codealike.json
     },
     {
       file: 'src/index.ts',
-      content: `import CodeGen from '@felce/lowcode-code-generator';
+      content: `import CodeGen from '@felce/lowcode-react-code-generator';
 
 import examplePlugin from './plugins/example';
 
@@ -714,7 +714,7 @@ export default function createHelloWorldProjectBuilder() {
   COMMON_CHUNK_NAME,
   CLASS_DEFINE_CHUNK_NAME,
   DEFAULT_LINK_AFTER,
-} from '@felce/lowcode-code-generator';
+} from '@felce/lowcode-react-code-generator';
 
 export interface PluginConfig {
   fileType: string;

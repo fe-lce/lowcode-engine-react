@@ -1,7 +1,7 @@
 {
-  "name": "@felce/lowcode-code-generator",
+  "name": "@felce/lowcode-react-code-generator",
   "version": "1.1.7",
-  "description": "出码引擎 for LowCode Engine",
+  "description": "React 出码引擎 for LowCode Engine",
   "license": "MIT",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -41,9 +41,9 @@
     "test:cov": "jest --coverage",
     "test:update-snapshots": "cross-env UPDATE_EXPECTED=true jest -u",
     "analyze:standalone": "ANALYZE=true node scripts/build-standalone",
-    "release:beta": "standard-version -t @felce/lowcode-code-generator\\@ -r patch --prerelease beta && git push --follow-tags && npm publish --tag beta",
-    "release:patch": "standard-version -t @felce/lowcode-code-generator\\@ -r patch && git push --follow-tags && npm publish",
-    "release:minor": "standard-version -t @felce/lowcode-code-generator\\@ -r minor && git push --follow-tags && npm publish",
+    "release:beta": "standard-version -t code-generator-v -r patch --prerelease beta && git push --follow-tags && npm publish --tag beta",
+    "release:patch": "standard-version -t code-generator-v -r patch && git push --follow-tags && npm publish",
+    "release:minor": "standard-version -t code-generator-v -r minor && git push --follow-tags && npm publish",
     "prepublishOnly": "npm run build",
     "demo": "node bin/lowcode-code-generator.js -i example-schema.json -o demo -s icejs"
   },
@@ -148,8 +148,8 @@
   },
   "repository": {
     "type": "http",
-    "url": "https://github.com/fe-lce/lowcode-engine/tree/main/modules/code-generator"
+    "url": "https://github.com/fe-lce/lowcode-engine-react/tree/main/modules/code-generator"
   },
-  "bugs": "https://github.com/fe-lce/lowcode-engine/issues",
-  "homepage": "https://github.com/fe-lce/lowcode-engine/#readme"
+  "bugs": "https://github.com/fe-lce/lowcode-engine-react/issues",
+  "homepage": "https://github.com/fe-lce/lowcode-engine-react/#readme"
 }

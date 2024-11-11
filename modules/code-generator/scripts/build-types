@@ -2,9 +2,11 @@
 
 echo building types...
 tsc --outDir types --declaration --emitDeclarationOnly &&  \
-  echo built types... && \
-  rm -rf types/packages && \
-  mv types/modules/code-generator/src/* types/ && \
-  rm -rf types/modules
+  echo built types...
+  # FIXME 这里应该是没有东西可以被执行的，不知道是不是以前就有问题
+  # echo built types... && \
+  # rm -rf types/packages && \
+  # mv types/modules/code-generator/src/* types/ && \
+  # rm -rf types/modules
 
 

@@ -8,7 +8,7 @@ declare const __PACKAGE_VERSION__: string;
 
 const packageVersion = __PACKAGE_VERSION__ || 'latest';
 
-export const DEFAULT_WORKER_JS = `https://cdn.jsdelivr.net/npm/@felce/lowcode-code-generator@${packageVersion}/dist/standalone-worker.min.js`;
+export const DEFAULT_WORKER_JS = `https://cdn.jsdelivr.net/npm/@felce/lowcode-react-code-generator@${packageVersion}/dist/standalone-worker.min.js`;
 
 export const DEFAULT_TIMEOUT_IN_MS = 60 * 1000;
 

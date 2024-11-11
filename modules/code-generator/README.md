@@ -6,9 +6,9 @@
 
 ### 1) 通过命令行快速体验
 
-欢迎使用命令行工具快速体验：`npx @felce/lowcode-code-generator -i example-schema.json -o generated -s icejs`
+欢迎使用命令行工具快速体验：`npx @felce/lowcode-react-code-generator -i example-schema.json -o generated -s icejs`
 
---其中 example-schema.json 可以从[这里下载](https://unpkg.com/@felce/lowcode-code-generator@beta/example-schema.json)
+--其中 example-schema.json 可以从[这里下载](https://unpkg.com/@felce/lowcode-react-code-generator@beta/example-schema.json)
 
 ### 2) 通过设计器插件快速体验
 
@@ -32,11 +32,11 @@ await plugins.register(CodeGenPlugin, { disableCodeGenActionBtn: true });
 
 此代码生成器一开始就是为服务端出码设计的，你可以直接这样来在 node.js 环境中使用：
 
-1. 安装依赖: `npm install --save @felce/lowcode-code-generator`
+1. 安装依赖: `npm install --save @felce/lowcode-react-code-generator`
 2. 引入代码生成器:
 
 ```js
-import CodeGenerator from '@felce/lowcode-code-generator';
+import CodeGenerator from '@felce/lowcode-react-code-generator';
 ```
 
 3. 创建项目构建器:
@@ -77,11 +77,11 @@ await CodeGenerator.publishers.zip().publish({
 
 随着现在电脑性能和浏览器技术的发展，出码其实已经不必非得在服务端做了，借助于 Web Worker 特性，可以在浏览器中进行出码：
 
-1. 安装依赖: `npm install --save @felce/lowcode-code-generator`
+1. 安装依赖: `npm install --save @felce/lowcode-react-code-generator`
 2. 引入代码生成器:
 
 ```js
-import * as CodeGenerator from '@felce/lowcode-code-generator/standalone-loader';
+import * as CodeGenerator from '@felce/lowcode-react-code-generator/standalone-loader';
 ```
 
 3. 【可选】提前初始化代码生成器:

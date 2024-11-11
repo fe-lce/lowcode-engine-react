@@ -1,7 +1,7 @@
 {
-  "name": "@felce/lowcode-material-parser",
+  "name": "@felce/lowcode-react-material-parser",
   "version": "1.0.3",
-  "description": "material parser for Ali lowCode engine",
+  "description": "React material parser for Ali lowCode engine",
   "main": "lib/index.js",
   "files": [
     "lib",
@@ -69,8 +69,8 @@
   },
   "repository": {
     "type": "http",
-    "url": "https://github.com/fe-lce/lowcode-engine/tree/main/modules/material-parser"
+    "url": "https://github.com/fe-lce/lowcode-engine-react/tree/main/modules/material-parser"
   },
-  "bugs": "https://github.com/fe-lce/lowcode-engine/issues",
-  "homepage": "https://github.com/fe-lce/lowcode-engine/#readme"
+  "bugs": "https://github.com/fe-lce/lowcode-engine-react/issues",
+  "homepage": "https://github.com/fe-lce/lowcode-engine-react/#readme"
 }
