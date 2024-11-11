@@ -1,0 +1,52 @@
+{
+  "name": "@felce/lowcode-react-simulator-renderer",
+  "version": "1.4.1",
+  "description": "react simulator renderer for alibaba lowcode designer",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "license": "MIT",
+  "files": [
+    "es",
+    "lib",
+    "dist"
+  ],
+  "scripts": {
+    "test": "build-scripts test --config build.test.json",
+    "build": "build-scripts build",
+    "build:umd": "build-scripts build --config build.umd.json",
+    "test:cov": "build-scripts test --config build.test.json --jest-coverage"
+  },
+  "dependencies": {
+    "@felce/lowcode-designer": "1.4.1",
+    "@felce/lowcode-react-renderer": "1.4.1",
+    "@felce/lowcode-types": "1.4.1",
+    "@felce/lowcode-utils": "1.4.1",
+    "classnames": "^2.2.6",
+    "mobx": "^6.3.0",
+    "mobx-react": "^7.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@alib/build-scripts": "^0.1.18",
+    "build-plugin-fusion": "^0.1.0",
+    "build-plugin-moment-locales": "^0.1.0",
+    "build-plugin-react-app": "^1.8.0",
+    "@types/classnames": "^2.2.7",
+    "@types/node": "^13.7.1",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "@types/react-router": "5.1.18"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "http",
+    "url": "https://github.com/fe-lce/lowcode-engine/tree/main/packages/react-simulator-renderer"
+  },
+  "gitHead": "2669f179e6f899d395ce1942d0fe04f9c5ed48a6",
+  "bugs": "https://github.com/fe-lce/lowcode-engine/issues",
+  "homepage": "https://github.com/fe-lce/lowcode-engine/#readme"
+}

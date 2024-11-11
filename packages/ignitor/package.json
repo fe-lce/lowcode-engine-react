@@ -1,0 +1,28 @@
+{
+  "name": "@felce/lowcode-ignitor",
+  "version": "1.4.1",
+  "description": "点火器，bootstrap lce react renderer",
+  "main": "lib/index.js",
+  "private": true,
+  "files": [
+    "dist",
+    "es",
+    "lib"
+  ],
+  "scripts": {
+    "start": "build-scripts start --disable-open --port 5556"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@alib/build-scripts": "^0.1.18",
+    "build-plugin-react-app": "^1.8.0",
+    "fs-extra": "^10.0.0",
+    "tsconfig-paths-webpack-plugin": "^3.2.0"
+  },
+  "repository": {
+    "type": "http",
+    "url": "https://github.com/fe-lce/lowcode-engine-react/tree/main/packages/ignitor"
+  },
+  "bugs": "https://github.com/fe-lce/lowcode-engine-react/issues",
+  "homepage": "https://github.com/fe-lce/lowcode-engine-react/#readme"
+}

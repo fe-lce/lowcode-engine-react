@@ -1,0 +1,47 @@
+{
+  "name": "@felce/lowcode-react-renderer",
+  "version": "1.4.1",
+  "description": "react renderer for ali lowcode engine",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "files": [
+    "lib",
+    "es",
+    "dist"
+  ],
+  "scripts": {
+    "test": "build-scripts test --config build.test.json",
+    "start": "build-scripts start",
+    "build": "build-scripts build",
+    "build:umd": "build-scripts build --config build.umd.json"
+  },
+  "keywords": [
+    "lowcode",
+    "engine",
+    "react"
+  ],
+  "dependencies": {
+    "@alifd/next": "^1.26.0",
+    "@felce/lowcode-react-renderer-core": "1.4.1"
+  },
+  "devDependencies": {
+    "@alib/build-scripts": "^0.1.18",
+    "build-plugin-fusion": "^0.1.0",
+    "build-plugin-moment-locales": "^0.1.0",
+    "build-plugin-react-app": "^1.8.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-test-renderer": "^18"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "http",
+    "url": "https://github.com/fe-lce/lowcode-engine/tree/main/packages/react-renderer"
+  },
+  "homepage": "https://github.com/fe-lce/lowcode-engine/#readme",
+  "gitHead": "2669f179e6f899d395ce1942d0fe04f9c5ed48a6",
+  "bugs": "https://github.com/fe-lce/lowcode-engine/issues"
+}
