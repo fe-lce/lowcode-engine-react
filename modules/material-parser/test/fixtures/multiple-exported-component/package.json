@@ -1,0 +1,21 @@
+{
+  "name": "multiple-exported-component",
+  "description": "提供最基础、通用的物料组件",
+  "version": "1.0.0",
+  "main": "es/index.js",
+  "module": "es/index.js",
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "prop-types": "^15.7.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router": "^6.9.0",
+    "react-router-dom": "^6.9.0"
+  },
+  "devDependencies": {
+    "cross-spawn": "^6.0.5"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npm.alibaba-inc.com"
+  }
+}
