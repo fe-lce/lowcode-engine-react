@@ -1,6 +1,8 @@
 import { runInAction } from 'mobx';
 import renderer from './renderer';
 
+console.log('import.meta', import.meta);
+
 if (typeof window !== 'undefined') {
   (window as any).SimulatorRenderer = renderer;
 }

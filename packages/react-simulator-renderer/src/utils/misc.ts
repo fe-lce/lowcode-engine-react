@@ -17,12 +17,14 @@ interface LibrayMap {
 export function getProjectUtils(librayMap: LibrayMap, utilsMetadata: UtilsMetadata[]) {
   const projectUtils: { [packageName: string]: any } = {};
   if (utilsMetadata) {
-    utilsMetadata.forEach(meta => {
+    utilsMetadata.forEach((meta) => {
       if (librayMap[meta?.npm.package]) {
-        const lib = window[librayMap[meta?.npm.package]];
+        const lib = (window as any)[librayMap[meta?.npm.package]];
+        projectUtils[meta.name] = lib;
       }
     });
   }
+  return projectUtils;
 }
 
 /**

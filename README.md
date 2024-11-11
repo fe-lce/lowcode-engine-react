@@ -1,13 +1,20 @@
-# 低代码 react 工程
+# lowcode-engine react 渲染器及画布
 
-## 前置
+## 环境及依赖
 
-node 18+
+node 18+、pnpm 9+、vite 5+ 、react 18+ 、typescript 5+ 、vitest 2+
 
 ## 启动
 
 ```bash
-npm i
-npm run setup
-npm run start
+pnpm i
+pnpm start
+```
+
+## 构建
+
+```bash
+pnpm test
+# 或者
+pnpm test:prevew
 ```

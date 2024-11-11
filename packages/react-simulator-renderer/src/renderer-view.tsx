@@ -1,4 +1,4 @@
-import { ReactInstance, Fragment, Component, createElement } from 'react';
+import { ReactInstance, Fragment, Component, createElement, ReactNode } from 'react';
 import { Router, Route, Switch } from 'react-router';
 import cn from 'classnames';
 import { Node } from '@felce/lowcode-designer';
@@ -111,7 +111,10 @@ function getDeviceView(view: any, device: string, mode: string) {
 }
 
 @observer
-class Layout extends Component<{ rendererContainer: SimulatorRendererContainer }> {
+class Layout extends Component<{
+  rendererContainer: SimulatorRendererContainer;
+  children: ReactNode;
+}> {
   render() {
     const { rendererContainer, children } = this.props;
     const { layout } = rendererContainer;

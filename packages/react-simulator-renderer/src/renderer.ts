@@ -267,7 +267,7 @@ export class SimulatorRendererContainer implements BuiltinSimulatorRenderer {
     this.disposeFunctions.push(
       host.connect(this, () => {
         // sync layout config
-        this._layout = host.project.get('config').layout;
+        this._layout = host.project.get('config')!.layout;
 
         // todo: split with others, not all should recompute
         if (
