@@ -6,11 +6,6 @@
     "packages/*"
   ],
   "command": {
-    "bootstrap": {
-      "npmClientArgs": [
-        "--no-lockfile"
-      ]
-    },
     "version": {
       "allowBranch": [
         "master",
