@@ -125,7 +125,7 @@ export interface IRendererProps {
 
   /**
    * 多语言语料
-   * 配置规范参见《低代码搭建组件描述协议》https://lowcode-engine.cn/lowcode 中 2.6 国际化多语言支持
+   * 配置规范参见《低代码搭建组件描述协议》https://felce.cn/lowcode 中 2.6 国际化多语言支持
    * */
   messages?: Record<string, any>;
 
@@ -133,7 +133,7 @@ export interface IRendererProps {
   appHelper?: IRendererAppHelper;
 
   /**
-   * 配置规范参见《低代码搭建组件描述协议》https://lowcode-engine.cn/lowcode
+   * 配置规范参见《低代码搭建组件描述协议》https://felce.cn/lowcode
    * 主要在搭建场景中使用，用于提升用户搭建体验。
    *
    * > 在生产环境下不需要设置

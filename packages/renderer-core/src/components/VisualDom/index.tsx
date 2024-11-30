@@ -5,7 +5,7 @@ import './index.css';
 
 export default function visualDomFactory(): IGeneralConstructor {
   const { PureComponent, createElement } = adapter.getRuntime();
-  return class VisualDom extends PureComponent {
+  class VisualDom extends PureComponent {
     static displayName = 'VisualDom';
 
     static propTypes = {
@@ -22,12 +22,15 @@ export default function visualDomFactory(): IGeneralConstructor {
       if (cell && typeof cell === 'function') {
         mainContent = cell();
       }
-      return createElement('div', { className: 'visual-dom' },
-        createElement('div', { className: 'panel-container' },
-          [
-            createElement('span', { className: 'title' }, title || label || text || __componentName),
-            createElement('div', { className: 'content' }, mainContent),
-          ]));
+      return createElement(
+        'div',
+        { className: 'visual-dom' },
+        createElement('div', { className: 'panel-container' }, [
+          createElement('span', { className: 'title' }, title || label || text || __componentName),
+          createElement('div', { className: 'content' }, mainContent),
+        ]),
+      );
     }
-  };
+  }
+  return VisualDom;
 }

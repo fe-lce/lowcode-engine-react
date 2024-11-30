@@ -1,11 +1,9 @@
 {
-  "name": "lowcode-engine",
+  "name": "lowcode-engine-react",
   "assets": {
     "type": "command",
     "command": {
-      "cmd": [
-        "./scripts/deploy.sh $BUILD_DEST"
-      ]
+      "cmd": ["./scripts/deploy.sh $BUILD_DEST"]
     }
   }
 }

@@ -28,7 +28,7 @@ export function buildUrl(dataAPI: any, params: any) {
  * @param {*} [otherProps={}]
  * @returns
  */
- export function get(dataAPI: any, params = {}, headers = {}, otherProps = {}) {
+export function get(dataAPI: any, params = {}, headers = {}, otherProps = {}) {
   const processedHeaders = {
     Accept: 'application/json',
     ...headers,
@@ -53,17 +53,12 @@ export function post(dataAPI: any, params = {}, headers: any = {}, otherProps = 
     'Content-Type': 'application/x-www-form-urlencoded',
     ...headers,
   };
-  const body = processedHeaders['Content-Type'].indexOf('application/json') > -1 || Array.isArray(params)
-  ? JSON.stringify(params)
-  : serializeParams(params);
+  const body =
+    processedHeaders['Content-Type'].indexOf('application/json') > -1 || Array.isArray(params)
+      ? JSON.stringify(params)
+      : serializeParams(params);
 
-  return request(
-    dataAPI,
-    'POST',
-    body,
-    processedHeaders,
-    otherProps,
-  );
+  return request(dataAPI, 'POST', body, processedHeaders, otherProps);
 }
 
 /**
@@ -77,7 +72,13 @@ export function post(dataAPI: any, params = {}, headers: any = {}, otherProps = 
  * @param {*} [otherProps={}]
  * @returns
  */
-export function request(dataAPI: any, method = 'GET', data: any, headers = {}, otherProps: any = {}) {
+export function request(
+  dataAPI: any,
+  method = 'GET',
+  data: any,
+  headers = {},
+  otherProps: any = {},
+) {
   let processedHeaders = headers || {};
   let payload = data;
   if (method === 'PUT' || method === 'DELETE') {
@@ -182,7 +183,7 @@ export function jsonp(dataAPI: any, params = {}, otherProps = {}) {
     const url = buildUrl(dataAPI, params);
     fetchJsonp(url, processedOtherProps)
       .then((response) => {
-        response.json();
+        return response.json();
       })
       .then((json) => {
         if (json) {

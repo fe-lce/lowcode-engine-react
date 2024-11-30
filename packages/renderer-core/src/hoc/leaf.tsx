@@ -281,7 +281,7 @@ export function leafWrapper(
         return;
       }
       const endTime = Date.now();
-      const nodeCount = host?.designer?.currentDocument?.getNodeCount?.();
+      const nodeCount = host?.designer.project?.currentDocument?.getNodeCount?.();
       const componentName =
         this.recordInfo.node?.componentName || this.leaf?.componentName || 'UnknownComponent';
       editor?.eventBus.emit(GlobalEvent.Node.Rerender, {

@@ -153,7 +153,7 @@ export class DataHelper {
    */
   getInitDataSourseConfigs() {
     const initConfigs = this.parser(this.ajaxList).filter((item: DataSourceItem) => {
-      // according to [spec](https://lowcode-engine.cn/lowcode), isInit should be boolean true to be working
+      // according to [spec](https://felce.cn/lowcode), isInit should be boolean true to be working
       if (item.isInit === true) {
         this.dataSourceMap[item.id].status = DS_STATUS.LOADING;
         return true;
