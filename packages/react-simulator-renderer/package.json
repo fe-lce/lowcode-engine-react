@@ -1,6 +1,6 @@
 {
   "name": "@felce/lowcode-react-simulator-renderer",
-  "version": "1.5.0-beta.0",
+  "version": "1.5.0-beta.1",
   "description": "react simulator renderer for alibaba lowcode designer",
   "main": "src/index.ts",
   "module": "src/index.ts",
