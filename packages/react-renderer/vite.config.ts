@@ -12,7 +12,7 @@ export default defineConfig({
     lib: {
       entry: './src/index.ts',
       fileName: (format, entryName) => `react-renderer.${format}.js`,
-      name: 'AliLowCodeReactRenderer',
+      name: 'LowCodeReactRenderer',
       cssFileName: 'react-renderer',
     },
     rollupOptions: {

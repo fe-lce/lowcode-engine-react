@@ -12,7 +12,7 @@ export default defineConfig({
     lib: {
       entry: './src/index.ts',
       fileName: (format, entryName) => `react-renderer-core.${format}.js`,
-      name: 'AliLowCodeReactRendererCore',
+      name: 'LowCodeReactRendererCore',
       cssFileName: 'react-renderer-core',
     },
     rollupOptions: {
@@ -33,6 +33,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
+        // https://cn.vitejs.dev/config/shared-options.html#css-preprocessoroptions
         api: 'legacy',
       },
     },
