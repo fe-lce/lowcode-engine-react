@@ -5,13 +5,11 @@
   "packages": ["packages/*"],
   "command": {
     "version": {
-      "allowBranch": ["master", "main", "release/*", "daily/*", "refactor/*"],
-      "independent": true
+      "allowBranch": ["master", "main", "release/*", "daily/*", "refactor/*"]
     },
     "publish": {
       "npmClient": "pnpm",
       "verifyRegistry": false,
-      "verifyAccess": false,
       "ignoreChanges": ["**/*.md", "**/test/**"],
       "message": "chore(release): publish %v",
       "conventionalCommits": true
