@@ -11,6 +11,7 @@
   "scripts": {
     "build": "vite build",
     "test": "vitest",
+    "test:ui": "vitest --ui",
     "test:cov": "vitest run --coverage"
   },
   "dependencies": {
@@ -31,22 +32,13 @@
   },
   "devDependencies": {
     "@felce/lowcode-designer": "1.4.1",
-    "@testing-library/react": "^16",
     "@types/classnames": "^2.3.4",
     "@types/debug": "^4.1.12",
-    "@types/jest": "29.5.14",
     "@types/lodash": "^4.17.13",
     "@types/node": "^18",
     "@types/prop-types": "^15.7.13",
     "@types/react-is": "^18.3.0",
-    "@types/react-test-renderer": "^18",
-    "@vitejs/plugin-react-swc": "3.7.1",
-    "jest": "29.7.0",
-    "react-test-renderer": "^18",
-    "ts-jest": "29.2.5",
-    "vite": "^6.0.1",
-    "vite-plugin-dts": "^4.3.0",
-    "vitest": "2.1.6"
+    "@vitest/coverage-v8": "2.1.8"
   },
   "publishConfig": {
     "access": "public",

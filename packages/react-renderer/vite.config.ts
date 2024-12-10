@@ -13,6 +13,10 @@ export default defineConfig({
   define: {
     'process.env': {},
   },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+  },
   build: {
     lib: {
       entry: './src/index.ts',

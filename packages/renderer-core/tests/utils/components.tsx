@@ -1,17 +1,31 @@
 import React from 'react';
-import { Box, Breadcrumb, Form, Select, Input, Button, Table, Pagination, Dialog } from '@alifd/next';
+import {
+  Box,
+  Breadcrumb,
+  Form,
+  Select,
+  Input,
+  Button,
+  Table,
+  Pagination,
+  Dialog,
+} from '@alifd/next';
 
-const Div = ({_leaf, ...rest}: any) => (<div {...rest}>{rest.children}</div>);
+const Div = ({ _leaf, ...rest }: any) => (
+  <div {...rest} data-testid="div">
+    {rest.children}
+  </div>
+);
 
-const MiniRenderDiv = ({_leaf, ...rest}: any) => {
-  return (
-    <div {...rest}>
-      {rest.children}
-    </div>
-  );
+const MiniRenderDiv = ({ _leaf, ...rest }: any) => {
+  return <div {...rest}>{rest.children}</div>;
 };
 
-const Text = ({_leaf, ...rest}: any) => (<div {...rest}>{rest.content}</div>);
+const Text = ({ _leaf, ...rest }: any) => (
+  <div data-testid="text" {...rest}>
+    {rest.content}
+  </div>
+);
 
 const SlotComponent = (props: any) => props.mobileSlot;
 

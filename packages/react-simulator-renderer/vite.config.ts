@@ -5,7 +5,7 @@ import dts from 'vite-plugin-dts';
 
 export default defineConfig({
   plugins: [
-    react(),
+    react({ tsDecorators: true }),
     dts({
       entryRoot: 'src/',
     }),
@@ -14,7 +14,9 @@ export default defineConfig({
     'process.env': {},
   },
   test: {
-    include: ['src/**/*.(test|spec).tsx'],
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: ['./vitest.setup.ts'],
   },
   preview: {
     port: 5655,

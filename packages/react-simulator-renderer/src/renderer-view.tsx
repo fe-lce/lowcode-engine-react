@@ -1,5 +1,5 @@
 import { ReactInstance, Fragment, Component, createElement, ReactNode } from 'react';
-import { Router, Route, Switch } from 'react-router';
+import { Router, Route, Routes as ReactRoutes } from 'react-router';
 import cn from 'classnames';
 import { Node } from '@felce/lowcode-designer';
 import LowCodeRenderer from '@felce/lowcode-react-renderer';
@@ -56,7 +56,7 @@ export default class SimulatorRendererView extends Component<{
   render() {
     const { rendererContainer } = this.props;
     return (
-      <Router history={rendererContainer.history}>
+      <Router location={{ pathname: '/' }} navigator={rendererContainer.history}>
         <Layout rendererContainer={rendererContainer}>
           <Routes rendererContainer={rendererContainer} />
         </Layout>
@@ -70,23 +70,19 @@ export class Routes extends Component<{ rendererContainer: SimulatorRendererCont
   render() {
     const { rendererContainer } = this.props;
     return (
-      <Switch>
+      <ReactRoutes>
         {rendererContainer.documentInstances.map((instance) => {
           return (
             <Route
               path={instance.path}
               key={instance.id}
-              render={(routeProps) => (
-                <Renderer
-                  documentInstance={instance}
-                  rendererContainer={rendererContainer}
-                  {...routeProps}
-                />
-              )}
+              element={
+                <Renderer documentInstance={instance} rendererContainer={rendererContainer} />
+              }
             />
           );
         })}
-      </Switch>
+      </ReactRoutes>
     );
   }
 }

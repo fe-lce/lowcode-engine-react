@@ -13,6 +13,11 @@ export default defineConfig({
   define: {
     'process.env': {},
   },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: ['./vitest.setup.ts'],
+  },
   build: {
     lib: {
       entry: './src/index.ts',
