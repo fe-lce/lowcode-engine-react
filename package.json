@@ -17,8 +17,9 @@
     "pub:prerelease": "pnpm run watchdog:build && lerna publish prerelease --yes --force-publish --exact --dist-tag beta --preid beta --no-changelog",
     "setup": "node ./scripts/setup.js",
     "start": "node ./scripts/start.js",
-    "test": "lerna run test --stream",
-    "test:snapshot": "lerna run test:snapshot",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:cov": "vitest run --coverage",
     "watchdog:build": "node ./scripts/watchdog.js"
   },
   "husky": {
