@@ -33,7 +33,6 @@
     "react-router": "7.0.2"
   },
   "devDependencies": {
-    "@types/classnames": "^2.3.4",
     "@types/lodash": "4.17.13",
     "@types/node": "^18",
     "@types/react": "^18",
