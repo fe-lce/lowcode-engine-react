@@ -43,7 +43,20 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/",
     "main": "dist/react-simulator-renderer.umd.js",
-    "module": "dist/react-simulator-renderer.es.js"
+    "module": "dist/react-simulator-renderer.es.js",
+    "types": "dist/index.d.ts",
+    "style": "dist/react-simulator-renderer.css",
+    "exports": {
+      ".": {
+        "import": "dist/react-simulator-renderer.es.js",
+        "require": "dist/react-simulator-renderer.umd.js",
+        "default": "dist/react-simulator-renderer.umd.js",
+        "style": "dist/react-simulator-renderer.css"
+      },
+      "./style.css": {
+        "style": "dist/react-simulator-renderer.css"
+      }
+    }
   },
   "repository": {
     "type": "http",

@@ -40,8 +40,21 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/",
-    "main": "dist/react-renderer-core.umd.js",
-    "module": "dist/react-renderer-core.es.js"
+    "main": "dist/index.umd.js",
+    "module": "dist/index.es.js",
+    "types": "dist/index.d.ts",
+    "style": "dist/index.css",
+    "exports": {
+      ".": {
+        "import": "./dist/index.es.js",
+        "require": "./dist/index.umd.js",
+        "default": "./dist/index.umd.js",
+        "style": "./dist/index.css"
+      },
+      "./style.css": {
+        "style": "./dist/index.css"
+      }
+    }
   },
   "repository": {
     "type": "http",

@@ -21,9 +21,9 @@ export default defineConfig({
   build: {
     lib: {
       entry: './src/index.ts',
-      fileName: (format, entryName) => `react-renderer-core.${format}.js`,
+      fileName: (format, entryName) => `${entryName}.${format}.js`,
       name: 'LowCodeReactRendererCore',
-      cssFileName: 'react-renderer-core',
+      cssFileName: 'index',
     },
     rollupOptions: {
       output: {
