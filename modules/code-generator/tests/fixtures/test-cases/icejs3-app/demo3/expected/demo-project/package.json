@@ -17,7 +17,7 @@
     "@ice/app": "~3.1.0",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
-    "@types/node": "^18.11.17",
+    "@types/node": "^18.19.68",
     "@ice/plugin-fusion": "^1.0.1",
     "@ice/plugin-moment-locales": "^1.0.0",
     "eslint": "^6.0.1",
