@@ -4,7 +4,12 @@ const process = require('child_process');
 
 // 需要修改版本的依赖
 // 如果不想更新某依赖，注释掉即可
-const pkgs = [['@types/node', '^18.19.68']];
+const pkgs = [
+  ['@felce', '^18.19.68'],
+  ['@felce/lowcode-designer', '1.5.0-beta.3'],
+  ['@felce/lowcode-types', '1.5.0-beta.3'],
+  ['@felce/lowcode-utils', '1.5.0-beta.3'],
+];
 
 // 获取最新版本
 // 忽略eslint的警告
