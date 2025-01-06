@@ -18,11 +18,11 @@
     "test:preview": "vitest preview"
   },
   "dependencies": {
-    "@alifd/next": "^1.26.0",
-    "@felce/lowcode-designer": "1.4.1",
+    "@alifd/next": "^1.27.30",
+    "@felce/lowcode-designer": "1.5.0-beta.3",
     "@felce/lowcode-react-renderer": "workspace:^",
-    "@felce/lowcode-types": "1.4.1",
-    "@felce/lowcode-utils": "1.4.1",
+    "@felce/lowcode-types": "1.5.0-beta.3",
+    "@felce/lowcode-utils": "1.5.0-beta.3",
     "classnames": "^2.5.1",
     "history": "^5.3.0",
     "lodash": "^4.17.21",

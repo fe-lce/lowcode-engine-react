@@ -35,22 +35,12 @@ export default defineConfig({
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
-          '@alifd/next': 'Next',
           moment: 'moment',
           lodash: '_',
           'prop-types': 'PropTypes',
-          '@felce/lowcode-engine': 'AliLowcodeEngine',
         },
       },
-      external: [
-        'react',
-        'react-dom',
-        'prop-types',
-        'moment',
-        'lodash',
-        '@alifd/next',
-        '@felce/lowcode-engine',
-      ],
+      external: ['react', 'react-dom', 'prop-types', 'moment', 'lodash'],
     },
   },
   // https://cn.vite.dev/guide/migration.html#sass-now-uses-modern-api-by-default
