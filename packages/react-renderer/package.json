@@ -34,19 +34,7 @@
     "registry": "https://registry.npmjs.org/",
     "main": "dist/react-renderer.umd.js",
     "module": "dist/react-renderer.es.js",
-    "types": "dist/index.d.ts",
-    "style": "dist/react-renderer.css",
-    "exports": {
-      ".": {
-        "import": "dist/react-renderer.es.js",
-        "require": "dist/react-renderer.umd.js",
-        "default": "dist/react-renderer.umd.js",
-        "style": "dist/react-renderer.css"
-      },
-      "./style.css": {
-        "default": "dist/react-renderer.css"
-      }
-    }
+    "types": "dist/index.d.ts"
   },
   "repository": {
     "type": "http",
