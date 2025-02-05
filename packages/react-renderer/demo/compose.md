@@ -31,5 +31,7 @@ class Demo extends PureComponent {
   }
 }
 
-ReactDOM.render(<Demo />, mountNode);
+const root = createRoot(document.getElementById('lce-container')!);
+
+root.render(<App />);
 ```
