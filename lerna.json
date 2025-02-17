@@ -2,26 +2,16 @@
   "lerna": "8",
   "version": "1.5.0",
   "npmClient": "pnpm",
-  "packages": [
-    "packages/*"
-  ],
+  "useWorkspaces": true,
+  "packages": ["packages/*"],
   "command": {
     "version": {
-      "allowBranch": [
-        "master",
-        "main",
-        "release/*",
-        "daily/*",
-        "refactor/*"
-      ]
+      "allowBranch": ["master", "main", "release/*", "daily/*", "refactor/*"]
     },
     "publish": {
       "npmClient": "pnpm",
       "verifyRegistry": false,
-      "ignoreChanges": [
-        "**/*.md",
-        "**/test/**"
-      ],
+      "ignoreChanges": ["**/*.md", "**/test/**"],
       "message": "chore(release): publish %v",
       "conventionalCommits": true
     }
