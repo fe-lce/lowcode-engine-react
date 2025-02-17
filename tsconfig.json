@@ -32,6 +32,7 @@
     "skipLibCheck": true,
     "baseUrl": "./packages",
     "useDefineForClassFields": true,
+    "types": ["vitest/globals", "vitest/jsdom", "vitest/react"],
     "paths": {
       "@felce/lowcode-*": ["./*/src"]
     },

@@ -1,22 +1,28 @@
-
 import React, { Component, createElement, forwardRef, PureComponent, createContext } from 'react';
-const mockGetRenderers = jest.fn();
-const mockGetRuntime = jest.fn();
-const mockParseExpression = jest.fn();
-jest.mock('../../src/adapter', () => {
+const mockGetRenderers = vi.fn();
+const mockGetRuntime = vi.fn();
+const mockParseExpression = vi.fn();
+vi.mock('../../src/adapter', () => {
   return {
-    getRenderers: () => { return mockGetRenderers();},
-    getRuntime: () => { return mockGetRuntime();},
-   };
+    default: {
+      getRenderers: () => {
+        return mockGetRenderers();
+      },
+      getRuntime: () => {
+        return mockGetRuntime();
+      },
+    },
+  };
 });
-jest.mock('../../src/utils', () => {
-  const originalUtils = jest.requireActual('../../src/utils');
+vi.mock('../../src/utils', async (importOriginal) => {
+  const originalUtils = await importOriginal();
   return {
     ...originalUtils,
-    parseExpression: (...args) => { mockParseExpression(args);},
-   };
+    parseExpression: (...args) => {
+      mockParseExpression(args);
+    },
+  };
 });
-
 
 import baseRendererFactory from '../../src/renderer/base';
 import { IBaseRendererProps } from '../../src/types';
@@ -24,10 +30,9 @@ import TestRenderer from 'react-test-renderer';
 import components from '../utils/components';
 import schema from '../fixtures/schema/basic';
 
-
 describe('Base Render factory', () => {
   it('customBaseRenderer logic works', () => {
-    mockGetRenderers.mockReturnValue({BaseRenderer: {}});
+    mockGetRenderers.mockReturnValue({ BaseRenderer: {} });
     const baseRenderer = baseRendererFactory();
     expect(mockGetRenderers).toBeCalledTimes(1);
     expect(baseRenderer).toStrictEqual({});
@@ -42,8 +47,8 @@ describe('Base Render methods', () => {
       constructor(props: IBaseRendererProps, context: any) {
         super(props, context);
       }
-    }
-  }
+    };
+  };
   beforeEach(() => {
     const mockRnederers = {
       PageRenderer: mockRendererFactory(),
@@ -62,29 +67,28 @@ describe('Base Render methods', () => {
       forwardRef,
     });
     RendererClass = baseRendererFactory();
-  })
+  });
 
   afterEach(() => {
     mockGetRenderers.mockClear();
-  })
+  });
 
   it('should excute lifecycle.getDerivedStateFromProps when defined', () => {
     const mockGetDerivedStateFromProps = {
       type: 'JSFunction',
-      value: 'function() {\n    console.log(\'did mount\');\n  }',
+      value: "function() {\n    console.log('did mount');\n  }",
     };
     const mockSchema = schema;
     (mockSchema.lifeCycles as any).getDerivedStateFromProps = mockGetDerivedStateFromProps;
 
-    // const originalUtils = jest.requireActual('../../src/utils');
-    // mockParseExpression.mockImplementation(originalUtils.parseExpression);
     const component = TestRenderer.create(
       <RendererClass
         __schema={mockSchema}
         components={components as any}
         thisRequiredInJSE={false}
-        a='1'
-      />);
+        a="1"
+      />,
+    );
     // console.log(component.root.props.a);
     // component.update(<RendererClasssnippets
     //   schema={mockSchema}
@@ -101,9 +105,7 @@ describe('Base Render methods', () => {
     // test lifecycle.getDerivedStateFromProps is JSFunction
 
     // test lifecycle.getDerivedStateFromProps is function
-
   });
-
 
   // it('should excute lifecycle.getSnapshotBeforeUpdate when defined', () => {
   // });
@@ -128,7 +130,6 @@ describe('Base Render methods', () => {
 
   // it('shouldComponentUpdate should work', () => {
   // });
-
 
   // it('_getComponentView should work', () => {
   // });

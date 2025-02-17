@@ -1,6 +1,16 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
-import { Box, Breadcrumb, Form, Select, Input, Button, Table, Pagination, Dialog } from '@alifd/next';
+import { render } from '@testing-library/react';
+import {
+  Box,
+  Breadcrumb,
+  Form,
+  Select,
+  Input,
+  Button,
+  Table,
+  Pagination,
+  Dialog,
+} from '@alifd/next';
 import ReactRenderer from '../src';
 import schema from './fixtures/schema/basic';
 
@@ -20,12 +30,8 @@ describe('React Renderer', () => {
       Pagination,
       Dialog,
     };
-    const content = (
-      <ReactRenderer
-        schema={schema}
-        components={components}
-      />);
-    const tree = renderer.create(content).toJSON();
-    expect(tree).toMatchSnapshot();
+    const content = <ReactRenderer schema={schema} components={components} />;
+    const { asFragment } = render(content);
+    expect(asFragment()).toMatchSnapshot();
   });
 });

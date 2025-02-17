@@ -1,4 +1,614 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`React Renderer > render basic case 1`] = `
+<DocumentFragment>
+  <div
+    class="lce-page lce-test"
+    style="padding: 0px 5px 0px 5px;"
+  >
+    <div
+      __id="node_dockcy8n9xed"
+      __inner__="[object Object]"
+      class="next-box"
+      style="flex-direction: column; flex-wrap: nowrap; background-color: rgba(31, 56, 88, 0.1); padding: 12px 12px 12px 12px;"
+    >
+      <div
+        __id="node_dockcy8n9xee"
+        __inner__="[object Object]"
+        class="next-box"
+        style="flex-direction: column; flex-wrap: nowrap; padding: 12px 12px 12px 12px; background-color: rgb(255, 255, 255);"
+      >
+        <nav
+          __id="node_dockcy8n9xef"
+          __inner__="[object Object]"
+          aria-label="Breadcrumb"
+          style="position: relative;"
+        >
+          <ul
+            class="next-breadcrumb"
+          >
+            <li
+              class="next-breadcrumb-item"
+            >
+              <span
+                __id="node_dockcy8n9xeg"
+                __inner__="[object Object]"
+                class="next-breadcrumb-text"
+              >
+                首页
+              </span>
+              <span
+                class="next-breadcrumb-separator"
+              >
+                <i
+                  class="next-icon next-icon-arrow-right next-medium next-breadcrumb-icon-sep"
+                />
+              </span>
+            </li>
+            <li
+              class="next-breadcrumb-item"
+            >
+              <span
+                __id="node_dockcy8n9xei"
+                __inner__="[object Object]"
+                class="next-breadcrumb-text"
+              >
+                品质中台
+              </span>
+              <span
+                class="next-breadcrumb-separator"
+              >
+                <i
+                  class="next-icon next-icon-arrow-right next-medium next-breadcrumb-icon-sep"
+                />
+              </span>
+            </li>
+            <li
+              class="next-breadcrumb-item"
+            >
+              <span
+                __id="node_dockcy8n9xek"
+                __inner__="[object Object]"
+                class="next-breadcrumb-text"
+              >
+                商家品质页面管理
+              </span>
+              <span
+                class="next-breadcrumb-separator"
+              >
+                <i
+                  class="next-icon next-icon-arrow-right next-medium next-breadcrumb-icon-sep"
+                />
+              </span>
+            </li>
+            <li
+              class="next-breadcrumb-item"
+            >
+              <span
+                __id="node_dockcy8n9xem"
+                __inner__="[object Object]"
+                aria-current="page"
+                class="next-breadcrumb-text activated"
+              >
+                质检知识条配置
+              </span>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div
+        __id="node_dockcy8n9xeo"
+        __inner__="[object Object]"
+        class="next-box"
+        style="flex-direction: column; flex-wrap: nowrap; margin-top: 12px; background-color: rgb(255, 255, 255);"
+      >
+        <form
+          __events=""
+          __id="node_dockcy8n9xep"
+          __inner__="[object Object]"
+          class="next-form next-inline next-medium"
+          role="form"
+          style="margin-top: 12px; margin-right: 12px; margin-left: 12px;"
+        >
+          <div
+            __id="node_dockcy8n9xeq"
+            __inner__="[object Object]"
+            class="next-form-item next-left next-medium"
+            style="margin-bottom: 0px;"
+          >
+            <div
+              class="next-form-item-label"
+            >
+              <label>
+                类目名：
+              </label>
+            </div>
+            <div
+              class="next-form-item-control"
+            >
+              <span
+                aria-haspopup="true"
+                class="next-select next-select-trigger next-select-single next-medium next-inactive next-no-search"
+                style="width: 150px;"
+              >
+                <span
+                  class="next-input next-medium next-select-inner"
+                >
+                  <span
+                    class="next-select-values next-input-text-field"
+                  >
+                    <span
+                      class="next-select-trigger-search"
+                    >
+                      <input
+                        __id="node_dockcy8n9xer"
+                        __inner__="[object Object]"
+                        aria-expanded="false"
+                        aria-label="select"
+                        autocomplete="off"
+                        height="100%"
+                        placeholder="请选择"
+                        readonly=""
+                        role="combobox"
+                        size="1"
+                        tabindex="0"
+                        value=""
+                      />
+                      <span
+                        aria-hidden="true"
+                      >
+                        <span>
+                          请选择
+                        </span>
+                        <span
+                          style="display: inline-block; width: 1px;"
+                        >
+                           
+                        </span>
+                      </span>
+                    </span>
+                  </span>
+                  <span
+                    class="next-input-control"
+                  >
+                    <span
+                      aria-hidden="true"
+                      class="next-select-arrow"
+                    >
+                      <i
+                        class="next-icon next-icon-arrow-down next-medium next-select-symbol-fold"
+                      />
+                    </span>
+                  </span>
+                </span>
+                <span
+                  aria-live="polite"
+                  class="next-sr-only"
+                />
+              </span>
+                
+            </div>
+          </div>
+          <div
+            __id="node_dockcy8n9xes"
+            __inner__="[object Object]"
+            class="next-form-item next-left next-medium"
+            style="margin-bottom: 0px;"
+          >
+            <div
+              class="next-form-item-label"
+            >
+              <label>
+                项目类型：
+              </label>
+            </div>
+            <div
+              class="next-form-item-control"
+            >
+              <span
+                aria-haspopup="true"
+                class="next-select next-select-trigger next-select-single next-medium next-inactive next-no-search"
+                style="width: 200px;"
+              >
+                <span
+                  class="next-input next-medium next-select-inner"
+                >
+                  <span
+                    class="next-select-values next-input-text-field"
+                  >
+                    <span
+                      class="next-select-trigger-search"
+                    >
+                      <input
+                        __id="node_dockcy8n9xet"
+                        __inner__="[object Object]"
+                        aria-expanded="false"
+                        aria-label="select"
+                        autocomplete="off"
+                        height="100%"
+                        placeholder="请选择"
+                        readonly=""
+                        role="combobox"
+                        size="1"
+                        tabindex="0"
+                        value=""
+                      />
+                      <span
+                        aria-hidden="true"
+                      >
+                        <span>
+                          请选择
+                        </span>
+                        <span
+                          style="display: inline-block; width: 1px;"
+                        >
+                           
+                        </span>
+                      </span>
+                    </span>
+                  </span>
+                  <span
+                    class="next-input-control"
+                  >
+                    <span
+                      aria-hidden="true"
+                      class="next-select-arrow"
+                    >
+                      <i
+                        class="next-icon next-icon-arrow-down next-medium next-select-symbol-fold"
+                      />
+                    </span>
+                  </span>
+                </span>
+                <span
+                  aria-live="polite"
+                  class="next-sr-only"
+                />
+              </span>
+                
+            </div>
+          </div>
+          <div
+            __id="node_dockcy8n9xeu"
+            __inner__="[object Object]"
+            class="next-form-item next-left next-medium"
+            style="margin-bottom: 0px;"
+          >
+            <div
+              class="next-form-item-label"
+            >
+              <label>
+                项目 ID：
+              </label>
+            </div>
+            <div
+              class="next-form-item-control"
+            >
+              <span
+                class="next-input next-medium"
+                style="width: 200px;"
+              >
+                <input
+                  __id="node_dockcy8n9xev"
+                  __inner__="[object Object]"
+                  autocomplete="off"
+                  height="100%"
+                  value=""
+                />
+              </span>
+                
+            </div>
+          </div>
+          <div
+            __id="node_dockcy8n9xew"
+            __inner__="[object Object]"
+            class="next-btn-group"
+          >
+            <button
+              __id="node_dockcy8n9xex"
+              __inner__="[object Object]"
+              class="next-btn next-medium next-btn-primary"
+              style="margin: 0px 5px 0px 5px;"
+              type="submit"
+            >
+              <span
+                class="next-btn-helper"
+              >
+                搜索
+              </span>
+            </button>
+            <button
+              __id="node_dockcy8n9xe10"
+              __inner__="[object Object]"
+              class="next-btn next-medium next-btn-normal"
+              style="margin: 0px 5px 0px 5px;"
+              type="reset"
+            >
+              <span
+                class="next-btn-helper"
+              >
+                清空
+              </span>
+            </button>
+          </div>
+        </form>
+      </div>
+      <div
+        __id="node_dockcy8n9xe1f"
+        __inner__="[object Object]"
+        class="next-box"
+        style="flex-direction: row; flex-wrap: nowrap; background-color: rgb(255, 255, 255); padding-bottom: 24px; display: flex; justify-content: flex-end;"
+      >
+        <button
+          __events="[object Object]"
+          __id="node_dockd5nrh9p4"
+          __inner__="[object Object]"
+          class="next-btn next-medium next-btn-primary"
+          type="button"
+        >
+          <span
+            class="next-btn-helper"
+          >
+            新建配置
+          </span>
+        </button>
+      </div>
+      <div
+        __id="node_dockd5nrh9p5"
+        __inner__="[object Object]"
+        class="next-box"
+        style="flex-direction: column; flex-wrap: nowrap;"
+      >
+        <div
+          __id="node_dockjielosj1"
+          __inner__="[object Object]"
+          actionbar="[object Object],[object Object]"
+          actioncolumn="[object Object],[object Object]"
+          actionfixed="right"
+          actiontitle="操作"
+          actiontype="link"
+          actionwidth="180"
+          class="next-table next-table-medium"
+          data="[object Object],[object Object],[object Object]"
+          maxwebshownactioncount="2"
+        >
+          <div
+            class="next-table-column-resize-proxy"
+          />
+          <table
+            role="table"
+          >
+            <colgroup>
+              <col
+                style="width: 200px;"
+              />
+              <col
+                style="width: 200px;"
+              />
+              <col
+                style="width: 200px;"
+              />
+            </colgroup>
+            <thead
+              class="next-table-header"
+            >
+              <tr>
+                <th
+                  class="next-table-cell next-table-header-node"
+                  role="gridcell"
+                  rowspan="1"
+                  style="text-align: center;"
+                >
+                  <div
+                    class="next-table-cell-wrapper"
+                    data-next-table-col="0"
+                  >
+                    姓名
+                  </div>
+                </th>
+                <th
+                  class="next-table-cell next-table-header-node"
+                  role="gridcell"
+                  rowspan="1"
+                  style="text-align: center;"
+                >
+                  <div
+                    class="next-table-cell-wrapper"
+                    data-next-table-col="1"
+                  >
+                    年龄
+                  </div>
+                </th>
+                <th
+                  class="next-table-cell next-table-header-node"
+                  role="gridcell"
+                  rowspan="1"
+                  style="text-align: center;"
+                >
+                  <div
+                    class="next-table-cell-wrapper"
+                    data-next-table-col="2"
+                  >
+                    邮箱
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody
+              class="next-table-body"
+            >
+              <tr>
+                <td
+                  colspan="3"
+                >
+                  <div
+                    class="next-table-empty"
+                    style="position: sticky; left: 0px; overflow: hidden; width: -1px;"
+                  >
+                    没有数据
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div
+          __id="node_dockd5nrh9pg"
+          __inner__="[object Object]"
+          class="next-box"
+          style="flex-direction: row; flex-wrap: nowrap; display: flex; justify-content: flex-end;"
+        >
+          <div
+            __id="node_dockd5nrh9pf"
+            __inner__="[object Object]"
+            class="next-pagination next-medium next-normal"
+          >
+            <div
+              class="next-pagination-pages"
+            >
+              <button
+                aria-label="上一页，当前第1页"
+                class="next-btn next-medium next-btn-normal next-pagination-item next-prev"
+                disabled=""
+                type="button"
+              >
+                <i
+                  class="next-icon next-icon-arrow-left next-xs next-btn-icon next-icon-first next-pagination-icon-prev"
+                />
+                <span
+                  class="next-btn-helper"
+                >
+                  上一页
+                </span>
+              </button>
+              <div
+                class="next-pagination-list"
+              >
+                <button
+                  aria-label="第1页，共10页"
+                  class="next-btn next-medium next-btn-normal next-pagination-item next-current"
+                  type="button"
+                >
+                  <span
+                    class="next-btn-helper"
+                  >
+                    1
+                  </span>
+                </button>
+                <button
+                  aria-label="第2页，共10页"
+                  class="next-btn next-medium next-btn-normal next-pagination-item"
+                  type="button"
+                >
+                  <span
+                    class="next-btn-helper"
+                  >
+                    2
+                  </span>
+                </button>
+                <button
+                  aria-label="第3页，共10页"
+                  class="next-btn next-medium next-btn-normal next-pagination-item"
+                  type="button"
+                >
+                  <span
+                    class="next-btn-helper"
+                  >
+                    3
+                  </span>
+                </button>
+                <button
+                  aria-label="第4页，共10页"
+                  class="next-btn next-medium next-btn-normal next-pagination-item"
+                  type="button"
+                >
+                  <span
+                    class="next-btn-helper"
+                  >
+                    4
+                  </span>
+                </button>
+                <i
+                  class="next-icon next-icon-ellipsis next-medium next-pagination-ellipsis next-pagination-icon-ellipsis"
+                />
+                <button
+                  aria-label="第10页，共10页"
+                  class="next-btn next-medium next-btn-normal next-pagination-item"
+                  type="button"
+                >
+                  <span
+                    class="next-btn-helper"
+                  >
+                    10
+                  </span>
+                </button>
+              </div>
+              <button
+                aria-label="下一页，当前第1页"
+                class="next-btn next-medium next-btn-normal next-pagination-item next-next"
+                type="button"
+              >
+                <span
+                  class="next-btn-helper"
+                >
+                  下一页
+                </span>
+                <i
+                  class="next-icon next-icon-arrow-right next-xs next-btn-icon next-icon-last next-pagination-icon-next"
+                />
+              </button>
+              <span
+                class="next-pagination-display"
+              >
+                <em>
+                  1
+                </em>
+                /10
+              </span>
+              <span
+                class="next-pagination-jump-text"
+              >
+                到第
+              </span>
+              <span
+                class="next-input next-medium next-pagination-jump-input"
+              >
+                <input
+                  aria-label="请输入跳转到第几页"
+                  autocomplete="off"
+                  height="100%"
+                  value=""
+                />
+              </span>
+              <span
+                class="next-pagination-jump-text"
+              >
+                页
+              </span>
+              <button
+                class="next-btn next-medium next-btn-normal next-pagination-jump-go"
+                type="button"
+              >
+                <span
+                  class="next-btn-helper"
+                >
+                  确定
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      componentid="node_dockd5nrh9pr"
+      componentname="ErrorComponent"
+    >
+      ErrorComponent Component Not Found
+    </div>
+  </div>
+</DocumentFragment>
+`;
 
 exports[`React Renderer render basic case 1`] = `
 <div

@@ -1,148 +1,251 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`children this.props.children is array 1`] = `
-<div>
+exports[`children > this.props.children is array 1`] = `
+<DocumentFragment>
   <div
-    content="content"
+    data-testid="div"
   >
-    content
+    <div
+      content="content"
+      data-testid="text"
+    >
+      content
+    </div>
+    <div
+      content="content"
+      data-testid="text"
+    >
+      content
+    </div>
   </div>
+</DocumentFragment>
+`;
+
+exports[`lifecycle > leaf change and make componentWillReceiveProps 1`] = `
+<DocumentFragment>
   <div
-    content="content"
+    data-testid="div"
   >
-    content
+    <div
+      __id="text6"
+      __tag="222"
+      componentid="text6"
+      content="content 123"
+      data-testid="text"
+    >
+      content 123
+    </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
-exports[`lifecycle leaf change and make componentWillReceiveProps 1`] = `
-<div>
+exports[`lifecycle > props change and make componentWillReceiveProps 1`] = `
+<DocumentFragment>
   <div
-    __id="text6"
-    __tag="222"
-    componentId="text6"
-    content="content new leaf"
+    data-testid="div"
   >
-    content new leaf
+    <div
+      content="content"
+      data-testid="text"
+    >
+      content
+    </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
-exports[`lifecycle props change and make componentWillReceiveProps 1`] = `
-<div>
+exports[`lifecycle > props change and make componentWillReceiveProps 2`] = `
+<DocumentFragment>
   <div
-    content="content"
+    data-testid="div"
   >
-    content
+    <div
+      content="content 123"
+      data-testid="text"
+    >
+      content 123
+    </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
-exports[`lifecycle props change and make componentWillReceiveProps 2`] = `
-<div>
+exports[`lifecycle > props change and make componentWillReceiveProps 3`] = `
+<DocumentFragment>
   <div
-    content="content 123"
+    data-testid="div"
   >
-    content 123
+    <div
+      __tag="111"
+      content="content 123"
+      data-testid="text"
+    >
+      content 123
+    </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
-exports[`lifecycle props change and make componentWillReceiveProps 3`] = `
-<div>
+exports[`mini unit render > leaf has a loop, render from parent 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      content="content"
+      data-testid="text"
+    >
+      content
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`mini unit render > make text props change 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      content="content"
+      data-testid="text"
+    >
+      content
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`mini unit render > make text props change 2`] = `
+<DocumentFragment>
+  <div>
+    <div
+      content="content"
+      data-testid="text"
+    >
+      content
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`mini unit render > parent is a mock leaf 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      content="content"
+      data-testid="text"
+    >
+      content
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`mini unit render > props has new children 1`] = `
+<DocumentFragment>
+  <div>
+    <div
+      content="content"
+      data-testid="text"
+    >
+      content
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`onChildrenChange > children is array string 1`] = `
+<DocumentFragment>
   <div
-    __tag="111"
-    content="content 123"
+    data-testid="div"
   >
-    content 123
+    onChildrenChange content 01onChildrenChange content 02
   </div>
-</div>
+</DocumentFragment>
 `;
 
-exports[`mini unit render leaf has a loop, render from parent 1`] = `
-<div>
-  this is a new children
-</div>
-`;
-
-exports[`mini unit render make text props change 1`] = `
-<div>
+exports[`onPropChange > change textNode [key:___condition___] props, but not hidden component 1`] = `
+<DocumentFragment>
   <div
-    content="content"
+    data-testid="div"
   >
-    content
+    <div
+      content="content"
+      data-testid="text"
+    >
+      content
+    </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
-exports[`mini unit render make text props change 2`] = `
-<div
-  newPropKey="newPropValue"
-/>
-`;
-
-exports[`mini unit render parent is a mock leaf 1`] = `
-<div>
+exports[`onPropChange > change textNode [key:___condition___] props, hide textNode component 1`] = `
+<DocumentFragment>
   <div
-    content="new content to mock"
+    data-testid="div"
   >
-    new content to mock
+    <div
+      content="content"
+      data-testid="text"
+    >
+      content
+    </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
-exports[`mini unit render props has new children 1`] = `
-<div>
-  children 01
-  children 02
-</div>
-`;
-
-exports[`onChildrenChange children is array string 1`] = `
-<div>
-  onChildrenChange content 01
-  onChildrenChange content 02
-</div>
-`;
-
-exports[`onPropChange change textNode [key:___condition___] props, but not hidden component 1`] = `
-<div>
+exports[`onPropChange > change textNode [key:content], content in this.props but not in leaf.export result 1`] = `
+<DocumentFragment>
   <div
-    content="content"
+    data-testid="div"
   >
-    content
+    <div
+      content="content"
+      data-testid="text"
+    >
+      content
+    </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
-exports[`onPropChange change textNode [key:___condition___] props, hide textNode component 1`] = `<div />`;
-
-exports[`onPropChange change textNode [key:content], content in this.props but not in leaf.export result 1`] = `
-<div>
+exports[`onPropChange > change textNode [key:content], content in this.props but not in leaf.export result 2`] = `
+<DocumentFragment>
   <div
-    content="content"
+    data-testid="div"
   >
-    content
+    <div
+      content="content"
+      data-testid="text"
+    >
+      content
+    </div>
   </div>
-</div>
+</DocumentFragment>
 `;
 
-exports[`onPropChange change textNode [key:content], content in this.props but not in leaf.export result 2`] = `
-<div>
+exports[`onVisibleChange > visible is false 1`] = `
+<DocumentFragment>
   <div
-    content={null}
-  />
-</div>
-`;
-
-exports[`onVisibleChange visible is false 1`] = `<div />`;
-
-exports[`onVisibleChange visible is true 1`] = `
-<div>
-  <div
-    content="content"
+    data-testid="div"
   >
-    content
+    <div
+      content="content"
+      data-testid="text"
+    >
+      content
+    </div>
   </div>
-</div>
+</DocumentFragment>
+`;
+
+exports[`onVisibleChange > visible is true 1`] = `
+<DocumentFragment>
+  <div
+    data-testid="div"
+  >
+    <div
+      content="content"
+      data-testid="text"
+    >
+      content
+    </div>
+  </div>
+</DocumentFragment>
 `;

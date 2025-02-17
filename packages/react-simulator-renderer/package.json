@@ -1,6 +1,6 @@
 {
   "name": "@felce/lowcode-react-simulator-renderer",
-  "version": "1.5.0-beta.0",
+  "version": "1.5.0",
   "description": "react simulator renderer for alibaba lowcode designer",
   "main": "src/index.ts",
   "module": "src/index.ts",
@@ -13,39 +13,38 @@
     "build": "vite build",
     "build:watch": "vite build --watch",
     "test": "vitest",
+    "test:ui": "vitest --ui",
     "test:cov": "vitest run --coverage",
     "test:preview": "vitest preview"
   },
   "dependencies": {
-    "@alifd/next": "^1.26.0",
-    "@felce/lowcode-designer": "1.4.1",
+    "@alifd/next": "^1.27.30",
+    "@felce/lowcode-designer": "latest",
     "@felce/lowcode-react-renderer": "workspace:^",
-    "@felce/lowcode-types": "1.4.1",
-    "@felce/lowcode-utils": "1.4.1",
-    "classnames": "^2.2.6",
+    "@felce/lowcode-types": "latest",
+    "@felce/lowcode-utils": "latest",
+    "classnames": "^2.5.1",
+    "history": "^5.3.0",
     "lodash": "^4.17.21",
-    "mobx": "^6.3.0",
-    "mobx-react": "^7.2.0",
+    "mobx": "^6.13.5",
+    "mobx-react": "9.1.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-router": "7.0.2"
   },
   "devDependencies": {
-    "@types/classnames": "^2.2.7",
     "@types/lodash": "4.17.13",
-    "@types/node": "^18",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "@types/react-router": "5.1.18",
-    "@vitejs/plugin-react-swc": "3.7.1",
-    "vite": "^6.0.1",
-    "vite-plugin-dts": "^4.3.0",
-    "vitest": "2.1.6"
+    "@types/node": "^18.19.68",
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
+    "less": "^4.2.1"
   },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/",
     "main": "dist/react-simulator-renderer.umd.js",
-    "module": "dist/react-simulator-renderer.es.js"
+    "module": "dist/react-simulator-renderer.es.js",
+    "types": "dist/index.d.ts"
   },
   "repository": {
     "type": "http",

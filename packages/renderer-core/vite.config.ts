@@ -4,16 +4,26 @@ import react from '@vitejs/plugin-react-swc';
 import dts from 'vite-plugin-dts';
 
 export default defineConfig({
-  plugins: [react(), dts()],
+  plugins: [
+    react(),
+    dts({
+      entryRoot: 'src/',
+    }),
+  ],
   define: {
     'process.env': {},
+  },
+  test: {
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: ['./vitest.setup.ts'],
   },
   build: {
     lib: {
       entry: './src/index.ts',
-      fileName: (format, entryName) => `react-renderer-core.${format}.js`,
-      name: 'AliLowCodeReactRendererCore',
-      cssFileName: 'react-renderer-core',
+      fileName: (format, entryName) => `${entryName}.${format}.js`,
+      name: 'LowCodeReactRendererCore',
+      cssFileName: 'index',
     },
     rollupOptions: {
       output: {
@@ -33,6 +43,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
+        // https://cn.vitejs.dev/config/shared-options.html#css-preprocessoroptions
         api: 'legacy',
       },
     },

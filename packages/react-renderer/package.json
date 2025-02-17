@@ -1,6 +1,6 @@
 {
   "name": "@felce/lowcode-react-renderer",
-  "version": "1.5.0-beta.0",
+  "version": "1.5.0",
   "description": "react renderer for ali lowcode engine",
   "main": "src/index.ts",
   "module": "src/index.ts",
@@ -11,6 +11,7 @@
     "start": "vite",
     "build": "vite build",
     "test": "vitest",
+    "test:ui": "vitest --ui",
     "test:cov": "vitest run --coverage"
   },
   "keywords": [
@@ -19,25 +20,21 @@
     "react"
   ],
   "dependencies": {
-    "@alifd/next": "^1.26.0",
+    "@alifd/next": "^1.27.30",
     "@felce/lowcode-react-renderer-core": "workspace:^",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@types/react": "18.3.12",
-    "@types/react-dom": "18.3.1",
-    "@vitejs/plugin-react-swc": "3.7.1",
-    "react-test-renderer": "^18",
-    "vite": "^6.0.1",
-    "vite-plugin-dts": "^4.3.0",
-    "vitest": "2.1.6"
+    "@types/react-dom": "18.3.1"
   },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/",
     "main": "dist/react-renderer.umd.js",
-    "module": "dist/react-renderer.es.js"
+    "module": "dist/react-renderer.es.js",
+    "types": "dist/index.d.ts"
   },
   "repository": {
     "type": "http",

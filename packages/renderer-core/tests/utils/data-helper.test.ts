@@ -1,40 +1,40 @@
 // @ts-nocheck
-const mockJsonp = jest.fn();
-const mockRequest = jest.fn();
-const mockGet = jest.fn();
-const mockPost = jest.fn();
-jest.mock('../../src/utils/request', () => {
-    return {
-      jsonp: (uri, params, headers, otherProps) => { 
-        return new Promise((resolve, reject) => {
-          resolve(mockJsonp(uri, params, headers, otherProps));
-        });
-      },
-      request: (uri, params, headers, otherProps) => { 
-        return new Promise((resolve, reject) => {
-          resolve(mockRequest(uri, params, headers, otherProps));
-        });
-      },
-      get: (uri, params, headers, otherProps) => { 
-        return new Promise((resolve, reject) => {
-          resolve(mockGet(uri, params, headers, otherProps));
-        });
-      },
-      post: (uri, params, headers, otherProps) => { 
-        return new Promise((resolve, reject) => {
-          resolve(mockPost(uri, params, headers, otherProps));
-        });
-      },
-    };
-  });
+const mockJsonp = vi.fn();
+const mockRequest = vi.fn();
+const mockGet = vi.fn();
+const mockPost = vi.fn();
+vi.mock('../../src/utils/request', () => {
+  return {
+    jsonp: (uri, params, headers, otherProps) => {
+      return new Promise((resolve, reject) => {
+        resolve(mockJsonp(uri, params, headers, otherProps));
+      });
+    },
+    request: (uri, params, headers, otherProps) => {
+      return new Promise((resolve, reject) => {
+        resolve(mockRequest(uri, params, headers, otherProps));
+      });
+    },
+    get: (uri, params, headers, otherProps) => {
+      return new Promise((resolve, reject) => {
+        resolve(mockGet(uri, params, headers, otherProps));
+      });
+    },
+    post: (uri, params, headers, otherProps) => {
+      return new Promise((resolve, reject) => {
+        resolve(mockPost(uri, params, headers, otherProps));
+      });
+    },
+  };
+});
 
 import { DataHelper, doRequest } from '../../src/utils/data-helper';
 import { parseData } from '../../src/utils/common';
 
 describe('test DataHelper ', () => {
   beforeEach(() => {
-    jest.resetModules();
-  })
+    vi.resetModules();
+  });
   it('can be inited', () => {
     const mockHost = {};
     let mockDataSourceConfig = {};
@@ -48,19 +48,19 @@ describe('test DataHelper ', () => {
     expect(dataHelper.appHelper).toBe(mockAppHelper);
     expect(dataHelper.parser).toBe(mockParser);
 
-
     dataHelper = new DataHelper(mockHost, undefined, mockAppHelper, mockParser);
     expect(dataHelper.config).toStrictEqual({});
     expect(dataHelper.ajaxList).toStrictEqual([]);
 
-    mockDataSourceConfig = { 
-      list: [ 
+    mockDataSourceConfig = {
+      list: [
         {
           id: 'ds1',
-        }, {
+        },
+        {
           id: 'ds2',
         },
-      ]
+      ],
     };
     dataHelper = new DataHelper(mockHost, mockDataSourceConfig, mockAppHelper, mockParser);
     expect(dataHelper.config).toBe(mockDataSourceConfig);
@@ -77,19 +77,20 @@ describe('test DataHelper ', () => {
     let dataHelper = new DataHelper(mockHost, mockDataSourceConfig, mockAppHelper, mockParser);
 
     // test generateDataSourceMap logic
-    mockDataSourceConfig = { 
-      list: [ 
+    mockDataSourceConfig = {
+      list: [
         {
           id: 'getInfo',
           isInit: true,
-          type: 'fetch',  // fetch/mtop/jsonp/custom
+          type: 'fetch', // fetch/mtop/jsonp/custom
           options: {
             uri: 'mock/info.json',
             method: 'GET',
             params: { a: 1 },
             timeout: 5000,
           },
-        }, {
+        },
+        {
           id: 'postInfo',
           isInit: true,
           type: 'fetch',
@@ -100,7 +101,7 @@ describe('test DataHelper ', () => {
             timeout: 5000,
           },
         },
-      ]
+      ],
     };
     dataHelper = new DataHelper(mockHost, mockDataSourceConfig, mockAppHelper, mockParser);
     expect(Object.keys(dataHelper.dataSourceMap).length).toBe(2);
@@ -115,19 +116,19 @@ describe('test DataHelper ', () => {
     const mockParser = (config: any) => parseData(config);
 
     // test generateDataSourceMap logic
-    mockDataSourceConfig = { 
-      list: [ 
+    mockDataSourceConfig = {
+      list: [
         {
           id: 'getInfo',
           isInit: true,
-          type: 'fetch',  // fetch/mtop/jsonp/custom
+          type: 'fetch', // fetch/mtop/jsonp/custom
           options: {
             uri: 'mock/info.json',
             method: 'GET',
             params: { a: 1 },
             timeout: 5000,
           },
-        }, 
+        },
         {
           id: 'postInfo',
           isInit: false,
@@ -138,7 +139,7 @@ describe('test DataHelper ', () => {
             params: { a: 1 },
             timeout: 5000,
           },
-        }, 
+        },
         {
           id: 'getInfoLater',
           isInit: false,
@@ -242,7 +243,7 @@ describe('test DataHelper ', () => {
     expect(mockRequest).toBeCalled();
     mockRequest.mockClear();
     mockGet.mockClear();
-    
+
     // method will be GET when not provided
     doRequest('fetch', {
       uri: 'https://www.baidu.com',
@@ -269,14 +270,15 @@ describe('test DataHelper ', () => {
   });
   it('updateDataSourceMap should work', () => {
     const mockHost = {};
-    const mockDataSourceConfig = { 
-      list: [ 
+    const mockDataSourceConfig = {
+      list: [
         {
           id: 'ds1',
-        }, {
+        },
+        {
           id: 'ds2',
         },
-      ]
+      ],
     };
     const mockAppHelper = {};
     const mockParser = (config: any) => parseData(config);
@@ -294,8 +296,8 @@ describe('test DataHelper ', () => {
   });
 
   it('handleData should work', () => {
-    const mockHost = { stateA: 'aValue'};
-    const mockDataSourceConfig = { 
+    const mockHost = { stateA: 'aValue' };
+    const mockDataSourceConfig = {
       list: [
         {
           id: 'fullConfigGet',
@@ -325,7 +327,7 @@ describe('test DataHelper ', () => {
             value: 'function(options) { return options; }',
           },
         },
-      ]
+      ],
     };
     const mockAppHelper = {};
     const mockParser = (config: any) => parseData(config);
@@ -333,43 +335,59 @@ describe('test DataHelper ', () => {
     // test valid case
     let mockDataHandler = {
       type: 'JSFunction',
-      value: 'function(res) { return res.data + \'+\' + this.stateA; }',
+      value: "function(res) { return res.data + '+' + this.stateA; }",
     };
-    let result = dataHelper.handleData('fullConfigGet', mockDataHandler, { data: 'mockDataValue' }, null);
+    let result = dataHelper.handleData(
+      'fullConfigGet',
+      mockDataHandler,
+      { data: 'mockDataValue' },
+      null,
+    );
     expect(result).toBe('mockDataValue+aValue');
 
     // test invalid datahandler
     mockDataHandler = {
       type: 'not a JSFunction',
-      value: 'function(res) { return res.data + \'+\' + this.stateA; }',
+      value: "function(res) { return res.data + '+' + this.stateA; }",
     };
-    result = dataHelper.handleData('fullConfigGet', mockDataHandler, { data: 'mockDataValue' }, null);
+    result = dataHelper.handleData(
+      'fullConfigGet',
+      mockDataHandler,
+      { data: 'mockDataValue' },
+      null,
+    );
     expect(result).toStrictEqual({ data: 'mockDataValue' });
 
     // exception with id
     mockDataHandler = {
       type: 'JSFunction',
-      value: 'function(res) { return res.data + \'+\' + JSON.parse({a:1}); }',
+      value: "function(res) { return res.data + '+' + JSON.parse({a:1}); }",
     };
-    result = dataHelper.handleData('fullConfigGet', mockDataHandler, { data: 'mockDataValue' }, null);
+    result = dataHelper.handleData(
+      'fullConfigGet',
+      mockDataHandler,
+      { data: 'mockDataValue' },
+      null,
+    );
     expect(result).toBeUndefined();
 
     // exception without id
     mockDataHandler = {
       type: 'JSFunction',
-      value: 'function(res) { return res.data + \'+\' + JSON.parse({a:1}); }',
+      value: "function(res) { return res.data + '+' + JSON.parse({a:1}); }",
     };
     result = dataHelper.handleData(null, mockDataHandler, { data: 'mockDataValue' }, null);
     expect(result).toBeUndefined();
   });
 
   it('updateConfig should work', () => {
-    const mockHost = { stateA: 'aValue'};
-    const mockDataSourceConfig = { 
+    const mockHost = { stateA: 'aValue' };
+    const mockDataSourceConfig = {
       list: [
         {
           id: 'ds1',
-        }, {
+        },
+        {
           id: 'ds2',
         },
         {
@@ -400,7 +418,7 @@ describe('test DataHelper ', () => {
             value: 'function(options) { return options; }',
           },
         },
-      ]
+      ],
     };
     const mockAppHelper = {};
     const mockParser = (config: any) => parseData(config);
@@ -408,7 +426,7 @@ describe('test DataHelper ', () => {
 
     expect(dataHelper.ajaxList.length).toBe(3);
 
-    let updatedConfig = { 
+    let updatedConfig = {
       list: [
         {
           id: 'ds2',
@@ -416,14 +434,14 @@ describe('test DataHelper ', () => {
         {
           id: 'fullConfigGet',
         },
-      ]
+      ],
     };
     dataHelper.updateConfig(updatedConfig);
 
     expect(dataHelper.ajaxList.length).toBe(2);
     expect(dataHelper.dataSourceMap.ds1).toBeUndefined();
 
-    updatedConfig = { 
+    updatedConfig = {
       list: [
         {
           id: 'ds2',
@@ -434,7 +452,7 @@ describe('test DataHelper ', () => {
         {
           id: 'ds3',
         },
-      ]
+      ],
     };
     dataHelper.updateConfig(updatedConfig);
     expect(dataHelper.ajaxList.length).toBe(3);
@@ -442,12 +460,13 @@ describe('test DataHelper ', () => {
   });
 
   it('getInitData should work', () => {
-    const mockHost = { stateA: 'aValue'};
-    const mockDataSourceConfig = { 
+    const mockHost = { stateA: 'aValue' };
+    const mockDataSourceConfig = {
       list: [
         {
           id: 'ds1',
-        }, {
+        },
+        {
           id: 'ds2',
         },
         {
@@ -481,7 +500,7 @@ describe('test DataHelper ', () => {
             value: 'function(options) { return options; }',
           },
         },
-      ]
+      ],
     };
     const mockAppHelper = {};
     const mockParser = (config: any) => parseData(config);
@@ -489,22 +508,28 @@ describe('test DataHelper ', () => {
 
     expect(dataHelper.ajaxList.length).toBe(3);
     expect(mockGet).toBeCalledTimes(0);
-    dataHelper.getInitData().then(res => {
+    dataHelper.getInitData().then((res) => {
       expect(mockGet).toBeCalledTimes(1);
-      expect(mockGet).toBeCalledWith('mock/info.json', {}, {
-        headerA: 1,
-      }, expect.anything());
+      expect(mockGet).toBeCalledWith(
+        'mock/info.json',
+        {},
+        {
+          headerA: 1,
+        },
+        expect.anything(),
+      );
       mockGet.mockClear();
     });
   });
 
   it('getDataSource should work', () => {
-    const mockHost = { stateA: 'aValue'};
-    const mockDataSourceConfig = { 
+    const mockHost = { stateA: 'aValue' };
+    const mockDataSourceConfig = {
       list: [
         {
           id: 'ds1',
-        }, {
+        },
+        {
           id: 'ds2',
         },
         {
@@ -538,7 +563,7 @@ describe('test DataHelper ', () => {
             value: 'function(options) { return options; }',
           },
         },
-      ]
+      ],
     };
     const mockAppHelper = {};
     const mockParser = (config: any) => parseData(config);
@@ -546,12 +571,17 @@ describe('test DataHelper ', () => {
 
     expect(dataHelper.ajaxList.length).toBe(3);
     expect(mockGet).toBeCalledTimes(0);
-    const callbackFn = jest.fn();
-    dataHelper.getDataSource('fullConfigGet', { param1: 'value1' }, {}, callbackFn).then(res => {
+    const callbackFn = vi.fn();
+    dataHelper.getDataSource('fullConfigGet', { param1: 'value1' }, {}, callbackFn).then((res) => {
       expect(mockGet).toBeCalledTimes(1);
-      expect(mockGet).toBeCalledWith('mock/info.json', { param1: 'value1' }, {
-        headerA: 1,
-      }, expect.anything());
+      expect(mockGet).toBeCalledWith(
+        'mock/info.json',
+        { param1: 'value1' },
+        {
+          headerA: 1,
+        },
+        expect.anything(),
+      );
       mockGet.mockClear();
       expect(callbackFn).toBeCalledTimes(1);
     });

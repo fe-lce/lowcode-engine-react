@@ -1,5 +1,5 @@
-import { IPublicTypePropChangeOptions } from "@ali/lowcode-designer";
-import EventEmitter from "events";
+import { IPublicTypePropChangeOptions } from '@felce/lowcode-designer';
+import EventEmitter from 'events';
 
 export default class Node {
   private emitter: EventEmitter;
@@ -21,12 +21,7 @@ export default class Node {
 
   constructor(schema: any, info: any = {}) {
     this.emitter = new EventEmitter();
-    const {
-      componentMeta,
-      parent,
-      isRoot,
-      hasLoop,
-    } = info;
+    const { componentMeta, parent, isRoot, hasLoop } = info;
     this.schema = {
       props: {},
       ...schema,
@@ -40,9 +35,9 @@ export default class Node {
 
   isRoot = () => this._isRoot;
 
-  get isRootNode () {
+  get isRootNode() {
     return this._isRoot;
-  };
+  }
 
   // componentMeta() {
   //   return this.componentMeta;
@@ -56,7 +51,7 @@ export default class Node {
     this.emitter.on('onChildrenChange', fn);
     return () => {
       this.emitter.off('onChildrenChange', fn);
-    }
+    };
   }
 
   emitChildrenChange() {
@@ -67,7 +62,7 @@ export default class Node {
     this.emitter.on('onPropChange', fn);
     return () => {
       this.emitter.off('onPropChange', fn);
-    }
+    };
   }
 
   emitPropChange(val: IPublicTypePropChangeOptions, skip?: boolean) {
@@ -75,7 +70,7 @@ export default class Node {
       this.schema.props = {
         ...this.schema.props,
         [val.key + '']: val.newValue,
-      }
+      };
     }
 
     this.emitter?.emit('onPropChange', val);
@@ -85,7 +80,7 @@ export default class Node {
     this.emitter.on('onVisibleChange', fn);
     return () => {
       this.emitter.off('onVisibleChange', fn);
-    }
+    };
   }
 
   emitVisibleChange(val: boolean) {

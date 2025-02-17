@@ -4,15 +4,24 @@ import react from '@vitejs/plugin-react-swc';
 import dts from 'vite-plugin-dts';
 
 export default defineConfig({
-  plugins: [react(), dts()],
+  plugins: [
+    react(),
+    dts({
+      entryRoot: 'src/',
+    }),
+  ],
   define: {
     'process.env': {},
+  },
+  test: {
+    globals: true,
+    environment: 'jsdom',
   },
   build: {
     lib: {
       entry: './src/index.ts',
       fileName: (format, entryName) => `react-renderer.${format}.js`,
-      name: 'AliLowCodeReactRenderer',
+      name: 'LowCodeReactRenderer',
       cssFileName: 'react-renderer',
     },
     rollupOptions: {

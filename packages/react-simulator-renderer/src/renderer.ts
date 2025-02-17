@@ -1,5 +1,5 @@
 import React, { createElement, ReactInstance } from 'react';
-import { render as reactRender } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { host } from './host';
 import SimulatorRendererView from './renderer-view';
 import { computed, observable as obx, untracked, makeObservable, configure } from 'mobx';
@@ -320,6 +320,7 @@ export class SimulatorRendererContainer implements BuiltinSimulatorRenderer {
     });
     this.history = history;
     history.listen((location) => {
+      console.log(location);
       const docId = location.pathname.slice(1);
       docId && host.project.open(docId);
     });
@@ -526,7 +527,9 @@ export class SimulatorRendererContainer implements BuiltinSimulatorRenderer {
     document.documentElement.classList.add('engine-page');
     document.body.classList.add('engine-document'); // important! Stylesheet.invoke depends
 
-    reactRender(createElement(SimulatorRendererView, { rendererContainer: this }), container);
+    const root = createRoot(container);
+    root.render(createElement(SimulatorRendererView, { rendererContainer: this }));
+    host.app = root;
     host.project.setRendererReady(this);
   }
 

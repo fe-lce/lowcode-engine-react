@@ -1,23 +1,20 @@
-import renderer from 'react-test-renderer';
+import { render, RenderResult } from '@testing-library/react';
 import rendererContainer from '../../../src/renderer';
 import SimulatorRendererView from '../../../src/renderer-view';
 import { Text } from '../../utils/components';
 
 describe('Base', () => {
-  const component = renderer.create(
-    <SimulatorRendererView
-      rendererContainer={rendererContainer}
-    />
-  );
+  let component: RenderResult;
+  component = render(<SimulatorRendererView rendererContainer={rendererContainer} />);
 
   it('should be render NotFoundComponent', () => {
-    let tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    let { asFragment } = component;
+    expect(asFragment()).toMatchSnapshot();
   });
 
   it('should be render Text', () => {
     // 更新 _componentsMap 值
-    (rendererContainer as any)._componentsMap.Text = Text;//  = host.designer.componentsMap;
+    (rendererContainer as any)._componentsMap.Text = Text; //  = host.designer.componentsMap;
     // 更新 components 列表
     (rendererContainer as any).buildComponents();
 
@@ -25,7 +22,7 @@ describe('Base', () => {
 
     rendererContainer.rerender();
 
-    let tree = component.toJSON();
+    let tree = component.asFragment();
     expect(tree).toMatchSnapshot();
   });
-})
+});

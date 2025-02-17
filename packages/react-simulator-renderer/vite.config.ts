@@ -4,12 +4,19 @@ import react from '@vitejs/plugin-react-swc';
 import dts from 'vite-plugin-dts';
 
 export default defineConfig({
-  plugins: [react(), dts()],
+  plugins: [
+    react({ tsDecorators: true }),
+    dts({
+      entryRoot: 'src/',
+    }),
+  ],
   define: {
     'process.env': {},
   },
   test: {
-    include: ['src/**/*.(test|spec).tsx'],
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: ['./vitest.setup.ts'],
   },
   preview: {
     port: 5655,
@@ -28,13 +35,12 @@ export default defineConfig({
         globals: {
           react: 'React',
           'react-dom': 'ReactDOM',
-          '@alifd/next': 'Next',
           moment: 'moment',
           lodash: '_',
           'prop-types': 'PropTypes',
         },
       },
-      external: ['react', 'react-dom', 'prop-types', 'moment', 'lodash', '@alifd/next'],
+      external: ['react', 'react-dom', 'prop-types', 'moment', 'lodash'],
     },
   },
   // https://cn.vite.dev/guide/migration.html#sass-now-uses-modern-api-by-default
